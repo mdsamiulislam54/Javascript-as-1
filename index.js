@@ -1,4 +1,4 @@
-// Write a function describeValue that takes any value and returns a string with two pieces of information joined by a space, a pipe, and another space:
+
 
 const describeValue = (value) => {
     if (value === undefined) {
@@ -8,7 +8,7 @@ const describeValue = (value) => {
         case "string":
             return `"${typeof value} | ${value ? "truthy" : "falsy"}"`;
         case "number":
-            return `"${typeof value} | ${value ? "truthy" : "falsy"}`;
+            return `"${typeof value} | ${value ? "truthy" : "falsy"}"`;
         case "boolean":
             return `"${typeof value} | ${value ? "truthy" : "falsy"}"`;
         case "object":
@@ -17,6 +17,27 @@ const describeValue = (value) => {
             return `"${typeof value} | ${value ? "truthy" : "falsy"}"`;
         default:
             return `"${typeof value} | ${value ? "truthy" : "falsy"}"`;
+    }
+}
+
+const getDayType  = (day) => {
+    switch (day) {
+        case "Monday":
+            return "Working Day";
+        case "Tuesday":
+            return "Working Day";
+        case "Wednesday":
+            return "Working Day";
+        case "Thursday":
+            return "Working Day";
+        case "Friday":
+            return "Weekday";
+        case "Saturday":
+            return "Weekend";
+        case "Sunday":
+            return "Working Day"; 
+        default:
+            return "Invalid day";
     }
 }
 
