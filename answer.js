@@ -1,5 +1,5 @@
 
-
+//Question 1
 const describeValue = (value) => {
     if (value === undefined) {
         return `"undefined | ${value ? "truthy" : "falsy"}"`;
@@ -20,6 +20,7 @@ const describeValue = (value) => {
     }
 }
 
+//Question 2
 const getDayType = (day) => {
     switch (day) {
         case "Monday":
@@ -41,6 +42,7 @@ const getDayType = (day) => {
     }
 }
 
+//Question 3
 const validateUsername = (username) => {
     if (typeof username !== "string") {
         return "Invalid username must be a string";
@@ -56,6 +58,7 @@ const validateUsername = (username) => {
 
 }
 
+//Question 4
 const getCngFare = (distance, isNight = false, waitingMinutes = 0) => {
     let fare = 50;
     if (distance <= 0) {
@@ -75,6 +78,7 @@ const getCngFare = (distance, isNight = false, waitingMinutes = 0) => {
 
 }
 
+//Question 5
 const getChaseVerdict = (target, score, ballsLeft) => {
     const needRuns = target - score;
     if (needRuns <= 0) {
