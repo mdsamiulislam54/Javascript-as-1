@@ -75,3 +75,26 @@ const getCngFare = (distance, isNight = false, waitingMinutes = 0) => {
 
 }
 
+const getChaseVerdict = (target, score, ballsLeft) => {
+    const needRuns = target - score;
+    if (needRuns <= 0) {
+        return "Won";
+    }
+    if (ballsLeft === 0) {
+        return " Lost";
+    }
+
+    const requiredRunRate = (needRuns / ballsLeft) * 6;
+    if (requiredRunRate <= 6) {
+        return `Need ${needRuns} runs in ${ballsLeft} balls | Comfortable`;
+    }
+    if (requiredRunRate > 6 && requiredRunRate < 12) {
+        return `Need ${needRuns} runs in ${ballsLeft} balls | Tough`;
+    }
+    if (requiredRunRate >= 12) {
+        return `Need ${needRuns} runs in ${ballsLeft} balls | Almost Impossible `;
+    }
+
+
+}
+
