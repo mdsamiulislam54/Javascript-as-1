@@ -47,12 +47,31 @@ const validateUsername = (username) => {
     }
     if (username.length < 4) {
         return "Too short";
-    }else if (username.includes(" ")) {
+    } else if (username.includes(" ")) {
         return "No spaces Allowed";
     } else if (username.toLowerCase().includes("admin")) {
         return "Reverse Word";
     }
     return "Available";
+
+}
+
+const getCngFare = (distance, isNight = false, waitingMinutes = 0) => {
+    let fare = 50;
+    if (distance <= 0) {
+        return "Invalid distance";
+    }
+    if (distance > 2) {
+        fare += (distance - 2) * 15;
+    }
+
+    fare += waitingMinutes * 2;
+
+    if (isNight) {
+        fare *= 1.2;
+    }
+
+    return fare;
 
 }
 
