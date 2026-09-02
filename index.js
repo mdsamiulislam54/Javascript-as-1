@@ -20,7 +20,7 @@ const describeValue = (value) => {
     }
 }
 
-const getDayType  = (day) => {
+const getDayType = (day) => {
     switch (day) {
         case "Monday":
             return "Working Day";
@@ -35,9 +35,24 @@ const getDayType  = (day) => {
         case "Saturday":
             return "Weekend";
         case "Sunday":
-            return "Working Day"; 
+            return "Working Day";
         default:
             return "Invalid day";
     }
+}
+
+const validateUsername = (username) => {
+    if (typeof username !== "string") {
+        return "Invalid username must be a string";
+    }
+    if (username.length < 4) {
+        return "Too short";
+    }else if (username.includes(" ")) {
+        return "No spaces Allowed";
+    } else if (username.toLowerCase().includes("admin")) {
+        return "Reverse Word";
+    }
+    return "Available";
+
 }
 
